@@ -195,6 +195,18 @@ public class DeviceActivity extends ViewPagerActivity {
 //        viewAll();
 	}
 
+    public String getDeviceName(){
+
+        Intent intent = getIntent();
+        mBtLeService = BluetoothLeService.getInstance();
+        mBluetoothDevice = intent.getParcelableExtra(EXTRA_DEVICE);
+        mServiceList = new ArrayList<BluetoothGattService>();
+
+        // Determine type of SensorTagGatt
+        String deviceName = mBluetoothDevice.getAddress();
+        return deviceName;
+    }
+
 
 
   public void viewAll(){

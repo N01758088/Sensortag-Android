@@ -69,6 +69,10 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import android.bluetooth.BluetoothDevice;
+
+
+import com.example.ti.ble.common.BleDeviceInfo;
 import com.example.ti.ble.sensortag.data.SensortagDbHelper;
 
 import com.example.ti.util.Point3D;
@@ -233,6 +237,14 @@ public class DeviceView extends Fragment {
 
  	public void onCharacteristicChanged(String uuidStr, byte[] rawValue) throws IOException {
 
+
+        BluetoothDevice mBtDevice = null;
+        int mRssi = 56;
+
+        BleDeviceInfo bld = new BleDeviceInfo(mBtDevice, mRssi );
+
+
+
         Point3D v;
         String msg = " ";
         String dmsg = "";
@@ -334,7 +346,7 @@ public class DeviceView extends Fragment {
             }
 
         }
-        addData(dmsg, tmsg, hmsg, bmsg);
+        addData( mActivity.getDeviceName(), tmsg, hmsg, bmsg);
 
          }
 
