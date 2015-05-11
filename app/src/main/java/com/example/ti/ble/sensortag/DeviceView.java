@@ -367,14 +367,14 @@ public class DeviceView extends Fragment {
       Log.e(LOG_TAG, value);
 
       SensortagDbHelper myDb = new SensortagDbHelper(mActivity.getBaseContext());
-      boolean isInserted = myDb.insertData(devid, temp, hum, bar, tstmp);
+   /*  boolean isInserted = myDb.insertData(devid, temp, hum, bar, tstmp);
       if (isInserted) {
           System.out.println("Status of local DB insert: " + insval);
           Log.e(LOG_TAG, insval);
       } else {
           System.out.println("Status of local DB insert: " + failval);
           Log.e(LOG_TAG, failval);
-      }
+      }*/
 
 
       InputStream is = null;
@@ -397,7 +397,7 @@ public class DeviceView extends Fragment {
           //of online database and the ip address in case of the localhost database.
           //And the php file which serves as the link between the android app
           //and the database.
-          HttpPost httpPost = new HttpPost("http://192.168.1.8/mysensorsync/sensorsync.php");
+          HttpPost httpPost = new HttpPost("http://sundaramoorthy.thruhere.net/mysensorsync/sensorsync.php");
 
           //Passing the nameValuePairs inside the httpPost
           httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
