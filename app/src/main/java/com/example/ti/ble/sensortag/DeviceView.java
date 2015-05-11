@@ -397,7 +397,7 @@ public class DeviceView extends Fragment {
           //of online database and the ip address in case of the localhost database.
           //And the php file which serves as the link between the android app
           //and the database.
-          HttpPost httpPost = new HttpPost("http://sundaramoorthy.thruhere.net/mysensorsync/sensorsync.php");
+          HttpPost httpPost = new HttpPost("webportal url goes here");
 
           //Passing the nameValuePairs inside the httpPost
           httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
